@@ -5,6 +5,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="/common.js"></script>
 <link rel="stylesheet" type="text/css" href="/common.css" />
 <style>
 a.btn {
@@ -12,35 +15,32 @@ a.btn {
 	margin: -20px 0 5px 0;
 }
 
-td:nth-child(1) {
+td:nth-child(1), td:nth-child(5) {
 	text-align: center;
 }
 </style>
 </head>
 <body>
 	<div class="container">
-		<h1>직원목록</h1>
-		<a href="create" class="btn">직원등록</a>
+		<h1>제품목록</h1>
 		<table class="list">
 			<thead>
 				<tr>
 					<th>id</th>
-					<th>직원번호</th>
 					<th>이름</th>
-					<th>부서</th>
-					<th>월급</th>
-					<th>성별</th>
+					<th>카테고리</th>
+					<th>가격</th>
+					<th>수량</th>
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach var="employee" items="${ employee }">
-					<tr data-url="edit?id=${ employee.id }">
-						<td>${ employee.id }</td>
-						<td>${ employee.employeeNo }</td>
-						<td>${ employee.name }</td>
-						<td>${ employee.title }</td>
-						<td>${ employee.salary }</td>
-						<td>${ employee.sex }</td>
+				<c:forEach var="product" items="${ products }">
+					<tr data-url="edit?id=${ product.id }">
+						<td>${ product.id }</td>
+						<td>${ product.name }</td>
+						<td>${ product.categoryTitle }</td>
+						<td>${ product.price }</td>
+						<td>${ product.quantity }</td>
 					</tr>
 				</c:forEach>
 			</tbody>

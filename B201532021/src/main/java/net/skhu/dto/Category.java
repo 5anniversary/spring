@@ -2,11 +2,12 @@ package net.skhu.dto;
 
 import java.io.Serializable;
 
-public class Department implements Serializable {
-	private static final long serialVersionUID = 1L;
+public class Category implements Serializable {
 
+	private static final long serialVersionUID = 1L;
 	int id;
 	String title;
+	String titleEng;
 
 	public int getId() {
 		return id;
@@ -22,6 +23,14 @@ public class Department implements Serializable {
 
 	public void setTitle(String title) {
 		this.title = title;
+	}
+
+	public String getTitleEng() {
+		return titleEng;
+	}
+
+	public void setTitleEng(String titleEng) {
+		this.titleEng = titleEng;
 	}
 
 }
